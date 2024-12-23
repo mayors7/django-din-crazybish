@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$_@k4p!6t$!%w1(nl6)dnb0&*&py2%@=1utgq79g+i*hx6hugr'
+SECRET_KEY = '0l^9_d%r0!*i)6-lwbzzx!%pck@f4i25av1m4rs56*)sb&0t94'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -46,7 +46,18 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',  
     'api',
+    'drf_yasg',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+
 TIME_ZONE = "America/New_York"  
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
